@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1, 
+        "code": "x21s5",
+        "email": "teste1@mail.com",
+        "name" : "Jenny",
+        "verified": 1
+    },
+    {
+        "id": 2, 
+        "code": "h387v",
+        "email": "teste2@mail.com",
+        "name" : "Talia",
+        "verified": 1
+    },
+    {
+        "id": 3, 
+        "code": "a92fs",
+        "email": "teste3@mail.com",
+        "name" : "Ricky",
+        "verified": 1
+    },
+    {
+        "id": 4, 
+        "code": "aw823",
+        "email": "teste4@mail.com",
+        "name" : "James",
+        "verified": 1
+    }
+]

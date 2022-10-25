@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option csharp_namespace="GrpcEmailler"; 
+
+package email;
+
+service Emailler {
+    rpc ChangeEmail (ChangeEmailRequest) returns (ChangeEmailReply);
+    rpc VerifyEmail (VerifyEmailRequest) returns (VerifyEmailReply);
+}
+
+message User {
+    int32 userId = 1;
+    string userCode = 2; 
+    string email = 3;
+    string name = 4;
+}
+
+message ChangeEmailRequest {  
+    string userCode = 1;
+    string newEmail = 2;
+    string olEmail = 3;
+}
+
+message ChangeEmailReply {
+    string newEmail = 1;
+    string veryfyCode = 2;
+    EmailChanged changed = 3;
+}
+
+message VerifyEmailRequest {
+    string email = 1;
+    string userCode = 2;
+    int32 verifyCode = 3; 
+}
+
+message VerifyEmailReply {
+    EmailVerified verified = 1;
+}
+
+enum EmailChanged {
+    EC_USERCODEERROR = 0;
+    EC_USERIDERROR = 1; 
+    EC_SUCCESS = 2; 
+    EC_FAILED = 3;
+}
+
+enum EmailVerified {
+    EV_CODENOTFOUND = 0;
+    EV_WRONGEMAIL = 1; 
+    EV_SUCESS = 2; 
+    EV_FAILED = 3;
+}
